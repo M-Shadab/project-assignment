@@ -36,7 +36,7 @@ app.post('/data/subscribers', (req, res) => {
 	if((req.body.month).toUpperCase() == 'JANUARY')	monthquery = 'Jan';
 	else if((req.body.month).toUpperCase() == 'FEBRUARY')	monthquery = 'Feb';
 	else if((req.body.month).toUpperCase() == 'MARCH')	monthquery = 'Mar';
-	else if((req.body.month).toUpperCase() == 'APRIL')	monthquery = 'APR';
+	else if((req.body.month).toUpperCase() == 'APRIL')	monthquery = 'Apr';
 if(monthquery == 'Jan' || monthquery == 'Feb' || monthquery == 'Mar' || monthquery == 'Apr'){
 	Customer.find({SubscriptionStartDate: { $regex: monthquery, $options: 'i' }})
 		.countDocuments()
