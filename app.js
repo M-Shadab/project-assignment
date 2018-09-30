@@ -33,10 +33,11 @@ app.post('/data/subscribers', (req, res) => {
 	let monthquery;
 	let subscribers = [];
 
-	if((req.body.month).toUpperCase() == 'JANUARY')	monthquery = 'Jan';
-	else if((req.body.month).toUpperCase() == 'FEBRUARY')	monthquery = 'Feb';
-	else if((req.body.month).toUpperCase() == 'MARCH')	monthquery = 'Mar';
-	else if((req.body.month).toUpperCase() == 'APRIL')	monthquery = 'Apr';
+	if((req.body.month).toUpperCase() == 'JANUARY'){	monthquery = 'Jan'; subscribers.push({month: 'January'});}	
+	else if((req.body.month).toUpperCase() == 'FEBRUARY'){	monthquery = 'Feb';  subscribers.push({month: 'February'})}
+	else if((req.body.month).toUpperCase() == 'MARCH'){	monthquery = 'Mar';  subscribers.push({month: 'March'})}
+	else if((req.body.month).toUpperCase() == 'APRIL'){	monthquery = 'Apr';	 subscribers.push({month: 'April'})}
+
 if(monthquery == 'Jan' || monthquery == 'Feb' || monthquery == 'Mar' || monthquery == 'Apr'){
 	Customer.find({SubscriptionStartDate: { $regex: monthquery, $options: 'i' }})
 		.countDocuments()
@@ -88,6 +89,8 @@ app.post('/data/division', (req, res) => {
 	else if((req.body.month).toUpperCase() == 'APRIL')	monthquery = 'Apr';
 
 if(monthquery == 'Jan'){
+	divisions.push({month: 'January'});
+
 	Customer.count(
 	       {"$and": [{"SubscriptionType": "Disruptor"},{"SubscriptionStartDate":{ $regex: 'Jan', $options: 'i' } }] 
 	       }, function(err, res1){
@@ -114,6 +117,7 @@ if(monthquery == 'Jan'){
 											});	
 		}} );}});}});	
 	} else if(monthquery == 'Feb'){
+		divisions.push({month: 'February'});
 
 		Customer.count(
 	       {"$and": [{"SubscriptionType": "Disruptor"},{"SubscriptionStartDate":{ $regex: 'Feb', $options: 'i' } }] 
@@ -187,6 +191,7 @@ if(monthquery == 'Jan'){
 																							});	
 		}});} });}});}} );}});} });
 	} else if(monthquery == 'Mar'){
+		divisions.push({month: 'March'});
 		
 		Customer.count(
 	       {"$and": [{"SubscriptionType": "Disruptor"},{"SubscriptionStartDate":{ $regex: 'Mar', $options: 'i' } }] 
@@ -294,7 +299,9 @@ if(monthquery == 'Jan'){
 																																			});	
 		}});}});}});}});}});} });}});}});}});
 	} else if( monthquery == 'Apr') {
-Customer.count(
+	divisions.push({month: 'April'});
+
+	Customer.count(
       {"$and": [{"SubscriptionType": "Disruptor"},{"SubscriptionStartDate":{ $regex: 'Apr', $options: 'i' } }] 
        }, function(err, res1){
        		if(err)	console.log(err);
