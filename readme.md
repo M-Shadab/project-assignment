@@ -6,20 +6,20 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-install Nodejs
+Install Nodejs
 ```
 https://nodejs.org/en/
 ```
-install MongoDb
+Install MongoDb
 ```
 https://www.mongodb.org
 ```
 
-#### How to Import Data sets to MongoDb?
+#### Import Data sets to MongoDb:
 ```
 mongoimport --db newsary --collection customers --type csv --file DataFilePath\Data.csv --headerline
 ```
-### How to run?
+### Run the Project:
 ```
 git clone https://github.com/M-Shadab/project-assignment.git
 ```
@@ -29,11 +29,11 @@ cd project-assignment
 ```
 Use npm install to download all the required dependencies into current directory .
 ```
-npm install
+$ npm install
 ```
 run the project using command
 ```
-node app.js
+$ node app.js
 ```
 Go to url
 ```
