@@ -6,8 +6,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install for running the project.
-
 install Nodejs
 ```
 https://nodejs.org/en/
