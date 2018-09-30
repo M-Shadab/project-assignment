@@ -1,0 +1,35 @@
+<!-- <div><#%= customer %></div> -->
+<div class="jumbotron bg-light text-center mb-2">
+	<p class="display-3">Welcome</p>
+	<h3 class="Lead">Analytics on Subscribers Data</h3>
+</div>
+	
+<div class="card card-body mb-2">
+	<form action="/data/subscribers" method="post">
+		<div class="form-group">
+			<label for="month">Enter Month to get number of subscribers Gain/Lost.</label>
+			<input type="text" name="month" class="form-control" required="required">
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+<% if(subscribers.length > 0) { %>
+	<div class="alert alert-success mb-2">Gain: <%= subscribers[0].Gain %></div>
+	<div class="alert alert-success mb-2">Lost: <%= subscribers[1].Lost %></div>	
+<% } %>
+
+<div class="card card-body mb-2">
+	<form action="/data/division" method="post">
+		<div class="form-group">
+			<label for="month">Enter month to get division of active subscription levels.</label>
+			<input type="text" name="month" class="form-control" required="required">
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+<% if(divisions.length > 0) { %>
+	<div class="alert alert-success mb-2">Disruptor: <%= divisions[0].Disruptor %></div>
+	<div class="alert alert-success mb-2">Liberator: <%= divisions[1].Liberator %></div>
+	<div class="alert alert-success mb-2">GameChanger: <%= divisions[2].GameChanger %></div>	
+<% } %>
+
