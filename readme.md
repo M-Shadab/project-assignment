@@ -1,4 +1,4 @@
-# Project Aassignment Nodejs
+# Project Assignment Nodejs
 
 ## Getting Started
 
